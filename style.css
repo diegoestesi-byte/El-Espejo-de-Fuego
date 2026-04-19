@@ -610,22 +610,24 @@ letter-spacing:0.5px;
 
 .report-main{
   padding:56px 24px 24px 24px;
+  background:#1A1A1A;
 }
 
 .report-article{
-  max-width:780px;
+  max-width:800px;
+  width:min(95%, 800px);
   margin:0 auto;
-  background:white;
+  background:#f8f6f2;
   padding:56px 64px;
   border-radius:10px;
-  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+  box-shadow:0 8px 22px rgba(0,0,0,0.14);
 }
 
 .report-article p{
-  font-size:19px;
-  line-height:1.9;
+  font-size:18px;
+  line-height:1.85;
   margin:0 0 26px 0;
-  color:#222;
+  color:#1A1A1A;
 }
 
 .report-lead{
@@ -638,7 +640,7 @@ letter-spacing:0.5px;
   font-size:18px;
   line-height:1.8;
   padding:22px 24px;
-  background:#f8f6f2;
+  background:#f0ece6;
   border-left:4px solid #C65A1E;
   border-radius:6px;
 }
@@ -698,7 +700,8 @@ letter-spacing:0.5px;
   }
 
   .report-article{
-    padding:36px 24px;
+    width:min(94%, 800px);
+    padding:36px 26px;
   }
 
   .report-article p{
@@ -726,7 +729,8 @@ letter-spacing:0.5px;
   }
 
   .report-article{
-    padding:28px 18px;
+    width:min(92%, 800px);
+    padding:24px;
   }
 
   .report-article p{
@@ -894,24 +898,26 @@ background-repeat:no-repeat;
 .note-main,
 .synthesis-main{
   padding:56px 24px 24px 24px;
+  background:#1A1A1A;
 }
 
 .note-article,
 .synthesis-article{
-  max-width:780px;
+  max-width:800px;
+  width:min(95%, 800px);
   margin:0 auto;
-  background:white;
+  background:#f8f6f2;
   padding:56px 64px;
   border-radius:10px;
-  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+  box-shadow:0 8px 22px rgba(0,0,0,0.14);
 }
 
 .note-article p,
 .synthesis-article p{
-  font-size:19px;
+  font-size:18px;
   line-height:1.85;
   margin:0 0 24px 0;
-  color:#222;
+  color:#1A1A1A;
 }
 
 .note-lead,
@@ -1007,7 +1013,8 @@ background-repeat:no-repeat;
 
   .note-article,
   .synthesis-article{
-    padding:36px 24px;
+    width:min(94%, 800px);
+    padding:36px 26px;
   }
 
   .note-article p,
@@ -1034,7 +1041,8 @@ background-repeat:no-repeat;
 
   .note-article,
   .synthesis-article{
-    padding:28px 18px;
+    width:min(92%, 800px);
+    padding:24px;
   }
 
   .note-article p,
