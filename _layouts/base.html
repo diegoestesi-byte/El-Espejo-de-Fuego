@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'es' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}{% unless page.title contains 'El Espejo del Fuego' %} | {{ site.title }}{% endunless %}</title>
+  {% assign resolved_base_path = page.base_path | default: '.' %}
+  <link rel="stylesheet" href="{{ resolved_base_path }}/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  {% include navbar.html base_path=resolved_base_path %}
+
+  {{ content }}
+
+  {% include footer.html base_path=resolved_base_path %}
+  <script src="{{ resolved_base_path }}/nav-dropdown-stability.js"></script>
+</body>
+</html>
