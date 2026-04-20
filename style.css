@@ -89,7 +89,7 @@ position:absolute;
 top:100%;
 left:0;
 min-width:260px;
-display:none;
+display:block;
 background:rgba(20,20,20,0.95);
 backdrop-filter:blur(4px);
 -webkit-backdrop-filter:blur(4px);
@@ -99,6 +99,11 @@ padding:8px;
 margin:0;
 box-shadow:0 12px 30px rgba(0,0,0,0.45);
 z-index:999;
+opacity:0;
+visibility:hidden;
+transform:translateY(8px);
+pointer-events:none;
+transition:opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 
 .dropdown-menu li{
@@ -125,7 +130,10 @@ color:#ffffff;
 
 .has-dropdown:hover > .dropdown-menu,
 .has-dropdown:focus-within > .dropdown-menu{
-display:block;
+opacity:1;
+visibility:visible;
+transform:translateY(0);
+pointer-events:auto;
 }
 
 /* =========================
