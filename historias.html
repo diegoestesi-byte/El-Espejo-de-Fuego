@@ -1,141 +1,130 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Historias | El Espejo del Fuego</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
-<body>
+---
+layout: base
+title: Historias | El Espejo del Fuego
+---
 
-  <header class="nav">
-    <div class="brand">
-      <img src="images/logo.png" alt="El Espejo del Fuego">
-    </div>
+{% assign historias_pages = site.pages | where: 'section', 'historias' %}
+{% assign direct_stories = historias_pages | where: 'subtype', 'medidas-directas' | sort: 'date' | reverse %}
+{% assign indirect_stories = historias_pages | where: 'subtype', 'medidas-indirectas' | sort: 'date' | reverse %}
+{% assign latest_direct = direct_stories | first %}
+{% assign latest_indirect = indirect_stories | first %}
 
-    <nav aria-label="Navegación principal">
-      <ul class="nav-menu">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="proyecto.html">El proyecto</a></li>
+<section class="page-hero small-hero">
+  <div class="hero-content">
+    <h2>Historias</h2>
+    <p>
+      Relatos sobre cómo las decisiones cotidianas, las prácticas locales y los aprendizajes comunitarios influyen en la forma de convivir con el riesgo de incendios forestales.
+    </p>
+  </div>
+</section>
 
-        <li class="has-dropdown">
-          <a href="historias.html">Historias</a>
-          <ul class="dropdown-menu">
-            <li><a href="historias-directas.html">Medidas directas</a></li>
-            <li><a href="historias-indirectas.html">Medidas indirectas</a></li>
-          </ul>
-        </li>
+<section class="intro">
+  <div class="section-heading">
+    <h2>Cuando el lugar vivido se convierte en experiencia</h2>
+    <p>
+      Esta sección reúne crónicas y relatos sobre personas, familias y comunidades que enfrentan el riesgo de incendios forestales desde su vida cotidiana. Algunas experiencias nacen de decisiones pensadas explícitamente para prepararse. Otras surgen por razones distintas, pero igualmente terminan reduciendo vulnerabilidades frente al fuego.
+    </p>
+  </div>
+</section>
 
-        <li><a href="claves-del-riesgo.html">Claves del riesgo</a></li>
+<section class="articles-section compact-spacing">
+  <div class="section-heading">
+    <h2>Últimas historias publicadas</h2>
+    <p>
+      Relatos recientes que muestran distintas formas de preparación, adaptación y aprendizaje frente al fuego.
+    </p>
+  </div>
 
-        <li class="has-dropdown">
-          <a href="conocimiento-y-datos.html">Conocimiento y datos</a>
-          <ul class="dropdown-menu">
-            <li><a href="casa-fortalecida.html">Casa fortalecida</a></li>
-            <li><a href="autoproteccion.html">Espacios de autoprotección</a></li>
-            <li><a href="preparacion.html">Preparación para emergencias</a></li>
-            <li><a href="respuesta-comunitaria.html">Primera respuesta comunitaria</a></li>
-          </ul>
-        </li>
-
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="page-hero small-hero">
-    <div class="hero-content">
-      <h2>Historias</h2>
-      <p>
-        Relatos sobre cómo las decisiones cotidianas, las prácticas locales y los aprendizajes comunitarios influyen en la forma de convivir con el riesgo de incendios forestales.
-      </p>
-    </div>
-  </section>
-
-  <section class="intro">
-    <div class="section-heading">
-      <h2>Cuando el lugar vivido se convierte en experiencia</h2>
-      <p>
-        Esta sección reúne crónicas y relatos sobre personas, familias y comunidades que enfrentan el riesgo de incendios forestales desde su vida cotidiana. Algunas experiencias nacen de decisiones pensadas explícitamente para prepararse. Otras surgen por razones distintas, pero igualmente terminan reduciendo vulnerabilidades frente al fuego.
-      </p>
-    </div>
-  </section>
-
-  <section class="articles-section">
-    <div class="section-heading">
-      <h2>Últimas historias publicadas</h2>
-      <p>
-        Relatos recientes que muestran distintas formas de preparación, adaptación y aprendizaje frente al fuego.
-      </p>
-    </div>
-
-    <div class="articles-grid">
-      <article class="article-card">
+  <div class="articles-grid">
+    <article class="article-card">
+      {% if latest_direct and latest_direct.image %}
+        <div class="article-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('{{ latest_direct.image | relative_url }}');"></div>
+      {% else %}
         <div class="article-image mariano-card"></div>
-        <div class="article-body">
-          <p class="article-meta">Medida directa · Vivienda · Emergencia</p>
-          <h3>El que guarda siempre tiene: agua disponible antes de una emergencia</h3>
-          <p>
-            Una práctica doméstica sostenida en el tiempo que se transforma en preparación concreta frente a cortes de suministro e incendios.
-          </p>
-          <a href="articulos/Historias/medidas-directas/01-historia-agua-mariano.html">Leer historia</a>
-        </div>
-      </article>
+      {% endif %}
+      <div class="article-body">
+        <p class="article-meta">Medida directa · Historia reciente</p>
+        <h3>{% if latest_direct %}{{ latest_direct.title }}{% else %}Próximamente nueva historia directa{% endif %}</h3>
+        <p>
+          {% if latest_direct and latest_direct.summary %}
+            {{ latest_direct.summary }}
+          {% else %}
+            Estamos preparando una nueva historia de medidas directas para esta sección.
+          {% endif %}
+        </p>
+        {% if latest_direct %}
+          <a href="{{ latest_direct.url | relative_url }}">Leer historia</a>
+        {% else %}
+          <span class="coming-soon-text">Próximamente</span>
+        {% endif %}
+      </div>
+    </article>
 
+    {% if latest_indirect %}
       <article class="article-card">
-        <div class="article-image indirect-2"></div>
+        {% if latest_indirect.image %}
+          <div class="article-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('{{ latest_indirect.image | relative_url }}');"></div>
+        {% else %}
+          <div class="article-image indirect-2"></div>
+        {% endif %}
         <div class="article-body">
-          <p class="article-meta">Conexión · Claves del riesgo</p>
-          <h3>¿Hasta qué punto sirve tener agua disponible frente a un incendio?</h3>
+          <p class="article-meta">Medida indirecta · Historia reciente</p>
+          <h3>{{ latest_indirect.title }}</h3>
           <p>
-            Una lectura breve sobre los alcances y límites del agua como recurso de preparación local.
+            {% if latest_indirect.summary %}
+              {{ latest_indirect.summary }}
+            {% else %}
+              Una nueva historia de medidas indirectas disponible para explorar en esta sección.
+            {% endif %}
           </p>
-          <a href="articulos/Claves del riesgo/01-clave-agua-riesgo.html">Leer nota</a>
+          <a href="{{ latest_indirect.url | relative_url }}">Leer historia</a>
         </div>
       </article>
-    </div>
-  </section>
+    {% else %}
+      <article class="article-card placeholder-card" aria-label="Próximamente historia indirecta">
+        <div class="article-image placeholder-image" aria-hidden="true"></div>
+        <div class="article-body">
+          <p class="article-meta">Medida indirecta · Próxima publicación</p>
+          <h3>Próximamente</h3>
+          <p>
+            Esta sección destacará automáticamente la historia indirecta más reciente cuando sea publicada.
+          </p>
+          <span class="coming-soon-text">Próximamente</span>
+        </div>
+      </article>
+    {% endif %}
+  </div>
+</section>
 
-  <section class="intro">
-    <div class="section-heading">
-      <h2>Dos formas de leer la prevención</h2>
+<section class="intro">
+  <div class="section-heading">
+    <h2>Dos formas de leer la prevención</h2>
+    <p>
+      Las historias del sitio se organizan en dos grandes grupos. La diferencia no está en su valor, sino en la intención con que surgieron y en la manera en que ayudan a reducir riesgo en cada contexto local.
+    </p>
+  </div>
+
+  <div class="story-types">
+    <div class="story-type-box">
+      <h3 class="story-title">
+        <span>Medidas directas</span>
+        <img src="images/icons/medidas-directas.png" alt="Medidas directas">
+      </h3>
       <p>
-        Las historias del sitio se organizan en dos grandes grupos. La diferencia no está en su valor, sino en la intención con que surgieron y en la manera en que ayudan a reducir riesgo en cada contexto local.
+        Son acciones pensadas explícitamente para enfrentar incendios forestales: adaptaciones en viviendas, preparación para emergencias, organización de respuesta y medidas de autoprotección.
       </p>
+      <a href="historias-directas.html">Explorar medidas directas</a>
     </div>
 
-    <div class="story-types">
-      <div class="story-type-box">
-        <h3 class="story-title">
-          <span>Medidas directas</span>
-          <img src="images/icons/medidas-directas.png" alt="Medidas directas">
-        </h3>
-        <p>
-          Son acciones pensadas explícitamente para enfrentar incendios forestales: adaptaciones en viviendas, preparación para emergencias, organización de respuesta y medidas de autoprotección.
-        </p>
-        <a href="historias-directas.html">Explorar medidas directas</a>
-      </div>
-
-      <div class="story-type-box">
-        <h3 class="story-title">
-          <span>Medidas indirectas</span>
-          <img src="images/icons/medidas-indirectas.png" alt="Medidas indirectas">
-        </h3>
-        <p>
-          Son prácticas que nacieron por otras razones, pero que igualmente disminuyen vulnerabilidades: mantenimiento del entorno, decisiones de uso del espacio y hábitos cotidianos con efecto preventivo.
-        </p>
-        <a href="historias-indirectas.html">Explorar medidas indirectas</a>
-      </div>
+    <div class="story-type-box">
+      <h3 class="story-title">
+        <span>Medidas indirectas</span>
+        <img src="images/icons/medidas-indirectas.png" alt="Medidas indirectas">
+      </h3>
+      <p>
+        Son prácticas que nacieron por otras razones, pero que igualmente disminuyen vulnerabilidades: mantenimiento del entorno, decisiones de uso del espacio y hábitos cotidianos con efecto preventivo.
+      </p>
+      <a href="historias-indirectas.html">Explorar medidas indirectas</a>
     </div>
-  </section>
-
-  <footer class="footer">
-    <img src="images/footer/paisaje-prevencion.png" class="footer-illustration" alt="Paisaje de prevención de incendios">
-    <p>El Espejo del Fuego</p>
-    <p>Historias humanas, divulgación sobre contextos locales y conocimiento aplicado sobre incendios forestales</p>
-  </footer>
-
-  <script src="nav-dropdown-stability.js"></script>
-</body>
-</html>
+  </div>
+</section>
