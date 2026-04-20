@@ -1,0 +1,31 @@
+title: El Espejo del Fuego
+description: Historias humanas, divulgación sobre contextos locales y conocimiento aplicado sobre incendios forestales.
+lang: es
+markdown: kramdown
+permalink: pretty
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page
+      base_path: "."
+  - scope:
+      path: "articulos/Claves del riesgo"
+      type: "pages"
+    values:
+      layout: article-clave-riesgo
+      base_path: "../.."
+  - scope:
+      path: "articulos/Historias"
+      type: "pages"
+    values:
+      layout: article-historia
+      base_path: "../../.."
+  - scope:
+      path: "articulos/Conocimiento y datos"
+      type: "pages"
+    values:
+      layout: article-sintesis
+      base_path: "../../.."
