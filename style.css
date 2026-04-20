@@ -129,7 +129,8 @@ color:#ffffff;
 }
 
 .has-dropdown:hover > .dropdown-menu,
-.has-dropdown:focus-within > .dropdown-menu{
+.has-dropdown:focus-within > .dropdown-menu,
+.has-dropdown.is-dropdown-open > .dropdown-menu{
 opacity:1;
 visibility:visible;
 transform:translateY(0);
