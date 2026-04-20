@@ -1,115 +1,64 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Medidas indirectas | El Espejo del Fuego</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
-<body>
+---
+layout: base
+title: Medidas indirectas | El Espejo del Fuego
+---
 
-  <header class="nav">
-    <div class="brand">
-      <img src="images/logo.png" alt="El Espejo del Fuego">
-    </div>
+{% assign indirect_stories = site.pages | where: 'section', 'historias' | where: 'subtype', 'medidas-indirectas' | sort: 'date' | reverse %}
 
-    <nav aria-label="Navegación principal">
-      <ul class="nav-menu">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="proyecto.html">El proyecto</a></li>
+<section class="page-hero small-hero">
+  <div class="hero-content">
+    <h2>Medidas indirectas</h2>
+    <p>
+      Historias sobre prácticas cotidianas que no nacieron para enfrentar el fuego, pero que igualmente ayudan a reducir vulnerabilidades.
+    </p>
+  </div>
+</section>
 
-        <li class="has-dropdown">
-          <a href="historias.html">Historias</a>
-          <ul class="dropdown-menu">
-            <li><a href="historias-directas.html">Medidas directas</a></li>
-            <li><a href="historias-indirectas.html">Medidas indirectas</a></li>
-          </ul>
-        </li>
+<section class="intro">
+  <div class="section-heading">
+    <h2>Cuando la prevención aparece sin proponérselo</h2>
+    <p>
+      Aquí se reúnen experiencias donde ciertas decisiones del día a día terminan teniendo efectos preventivos. Son formas de habitar, ordenar o mantener el entorno inmediato que no fueron pensadas originalmente para incendios forestales, pero que igualmente fortalecen la seguridad y la capacidad de respuesta.
+    </p>
+  </div>
+</section>
 
-        <li><a href="claves-del-riesgo.html">Claves del riesgo</a></li>
-
-        <li class="has-dropdown">
-          <a href="conocimiento-y-datos.html">Conocimiento y datos</a>
-          <ul class="dropdown-menu">
-            <li><a href="casa-fortalecida.html">Casa fortalecida</a></li>
-            <li><a href="autoproteccion.html">Espacios de autoprotección</a></li>
-            <li><a href="preparacion.html">Preparación para emergencias</a></li>
-            <li><a href="respuesta-comunitaria.html">Primera respuesta comunitaria</a></li>
-          </ul>
-        </li>
-
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="page-hero small-hero">
-    <div class="hero-content">
-      <h2>Medidas indirectas</h2>
-      <p>
-        Historias sobre prácticas cotidianas que no nacieron para enfrentar el fuego, pero que igualmente ayudan a reducir vulnerabilidades.
-      </p>
-    </div>
-  </section>
-
-  <section class="intro">
-    <div class="section-heading">
-      <h2>Cuando la prevención aparece sin proponérselo</h2>
-      <p>
-        Aquí se reúnen experiencias donde ciertas decisiones del día a día terminan teniendo efectos preventivos. Son formas de habitar, ordenar o mantener el entorno inmediato que no fueron pensadas originalmente para incendios forestales, pero que igualmente fortalecen la seguridad y la capacidad de respuesta.
-      </p>
-    </div>
-  </section>
-
-  <section class="articles-section compact-spacing">
-    <div class="articles-grid">
-
-      <article class="article-card">
-        <div class="article-image indirect-1"></div>
+<section class="articles-section compact-spacing">
+  <div class="articles-grid">
+    {% if indirect_stories.size > 0 %}
+      {% for story in indirect_stories %}
+        <article class="article-card">
+          {% if story.image %}
+            <div class="article-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('{{ story.image | relative_url }}');"></div>
+          {% else %}
+            <div class="article-image {% cycle 'indirect-1', 'indirect-2', 'direct-1' %}"></div>
+          {% endif %}
+          <div class="article-body">
+            <p class="article-meta">Medida indirecta · Historia</p>
+            <h3>{{ story.title }}</h3>
+            <p>
+              {% if story.summary %}
+                {{ story.summary }}
+              {% else %}
+                Historia de medidas indirectas disponible para explorar en esta sección.
+              {% endif %}
+            </p>
+            <a href="{{ story.url | relative_url }}">Leer artículo</a>
+          </div>
+        </article>
+      {% endfor %}
+    {% else %}
+      <article class="article-card placeholder-card" aria-label="Próximamente historias de medidas indirectas">
+        <div class="article-image placeholder-image" aria-hidden="true"></div>
         <div class="article-body">
-          <p class="article-meta">Medida indirecta · Vivienda · Adaptación</p>
-          <h3>Una modificación doméstica que también redujo el riesgo frente al fuego</h3>
+          <p class="article-meta">Medida indirecta · Próxima publicación</p>
+          <h3>Próximamente</h3>
           <p>
-            Una mejora cotidiana de la vivienda terminó funcionando como barrera preventiva frente a incendios forestales.
+            Esta sección publicará automáticamente nuevas historias indirectas cuando estén disponibles.
           </p>
-          <a href="contacto.html">Leer artículo</a>
+          <span class="coming-soon-text">Próximamente</span>
         </div>
       </article>
-
-      <article class="article-card">
-        <div class="article-image indirect-2"></div>
-        <div class="article-body">
-          <p class="article-meta">Medida indirecta · Territorio · Uso del espacio</p>
-          <h3>Cuando el manejo cotidiano del entorno también se transforma en prevención</h3>
-          <p>
-            Decisiones sobre limpieza, circulación y uso del espacio que reducen vulnerabilidad sin haber sido pensadas para emergencias.
-          </p>
-          <a href="contacto.html">Leer artículo</a>
-        </div>
-      </article>
-
-      <article class="article-card">
-        <div class="article-image mariano-card"></div>
-        <div class="article-body">
-          <p class="article-meta">Medida indirecta · Recursos · Continuidad</p>
-          <h3>Reservas domésticas para sostener la vida diaria en contingencia</h3>
-          <p>
-            Prácticas de almacenamiento y organización que permiten sostener funciones básicas en escenarios críticos, incluso cuando no surgieron como medidas contra incendios.
-          </p>
-          <a href="articulos/Historias/medidas-directas/01-historia-agua-mariano.html">Leer artículo relacionado</a>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <footer class="footer">
-    <img src="images/footer/paisaje-prevencion.png" class="footer-illustration" alt="Paisaje de prevención de incendios">
-    <p>El Espejo del Fuego</p>
-    <p>Historias humanas, divulgación sobre contextos locales y conocimiento aplicado sobre incendios forestales</p>
-  </footer>
-
-  <script src="nav-dropdown-stability.js"></script>
-</body>
-</html>
+    {% endif %}
+  </div>
+</section>
