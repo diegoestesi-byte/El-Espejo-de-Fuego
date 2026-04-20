@@ -12,19 +12,19 @@ defaults:
       layout: page
       base_path: "."
   - scope:
-      path: "articulos/Claves del riesgo"
+      path: "articulos/claves-del-riesgo"
       type: "pages"
     values:
       layout: article-clave-riesgo
       base_path: "../.."
   - scope:
-      path: "articulos/Historias"
+      path: "articulos/historias"
       type: "pages"
     values:
       layout: article-historia
       base_path: "../../.."
   - scope:
-      path: "articulos/Conocimiento y datos"
+      path: "articulos/conocimiento-y-datos"
       type: "pages"
     values:
       layout: article-sintesis
