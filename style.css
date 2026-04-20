@@ -144,6 +144,21 @@ p {
   background: var(--color-bg-panel);
 }
 
+.content h2 {
+  margin-bottom: var(--space-3);
+}
+
+.content p {
+  max-width: 760px;
+  margin-bottom: var(--space-3);
+  font-size: 17px;
+  line-height: 1.68;
+}
+
+.content p:last-child {
+  margin-bottom: 0;
+}
+
 .articles-section,
 .section-heading,
 .sections,
@@ -158,6 +173,10 @@ p {
 
 .articles-section {
   padding: var(--space-10) var(--space-7);
+}
+
+.articles-section.compact-spacing {
+  padding-top: 20px;
 }
 
 .alt-section {
@@ -866,7 +885,8 @@ p {
 .report-caption,
 .note-caption,
 .synthesis-caption {
-  margin: 10px 0 0;
+  max-width: 92%;
+  margin: 12px 0 0;
   font-size: 14px;
   line-height: 1.5;
   color: #666;
@@ -1221,6 +1241,10 @@ p {
   .note-article h2,
   .synthesis-article h2 {
     font-size: 28px;
+  }
+
+  .articles-section.compact-spacing {
+    padding-top: 16px;
   }
 
   .synthesis-box h2 {
