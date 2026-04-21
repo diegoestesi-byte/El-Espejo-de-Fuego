@@ -65,9 +65,27 @@ base_path: '../..'
 
       <section class="related-content">
         <h3>Este concepto se conecta con</h3>
+        {% assign related_story_page = nil %}
+        {% assign related_synthesis_page = nil %}
+        {% for item in site.pages %}
+          {% if item.permalink == page.related_story %}
+            {% assign related_story_page = item %}
+          {% endif %}
+          {% if item.permalink == page.related_synthesis %}
+            {% assign related_synthesis_page = item %}
+          {% endif %}
+        {% endfor %}
         <ul>
-          <li><a href="/historias/medidas-directas/agua-mariano/">Historia: El que guarda siempre tiene (Mariano en Las Pozas)</a></li>
-          <li><a href="/conocimiento-y-datos/preparacion/agua-preparacion/">Síntesis: uso del agua frente a incendios forestales</a></li>
+          {% if related_story_page %}
+            <li><a href="{{ related_story_page.url }}">Historia: {{ related_story_page.title }}</a></li>
+          {% else %}
+            <li>Historia relacionada: Próximamente.</li>
+          {% endif %}
+          {% if related_synthesis_page %}
+            <li><a href="{{ related_synthesis_page.url }}">Síntesis: {{ related_synthesis_page.title }}</a></li>
+          {% else %}
+            <li>Síntesis relacionada: Próximamente.</li>
+          {% endif %}
         </ul>
       </section>
 

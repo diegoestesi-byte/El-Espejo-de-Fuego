@@ -106,9 +106,27 @@ base_path: '../../..'
 
       <section class="related-content">
         <h3>Origen y vínculos</h3>
+        {% assign related_story_page = nil %}
+        {% assign related_key_page = nil %}
+        {% for item in site.pages %}
+          {% if item.permalink == page.related_story %}
+            {% assign related_story_page = item %}
+          {% endif %}
+          {% if item.permalink == page.related_key %}
+            {% assign related_key_page = item %}
+          {% endif %}
+        {% endfor %}
         <ul>
-          <li><a href="/historias/medidas-directas/agua-mariano/">Esta síntesis se relaciona con la historia: El que guarda siempre tiene</a></li>
-          <li><a href="/claves-del-riesgo/agua-riesgo/">Concepto asociado: utilidad y límites de tener agua disponible</a></li>
+          {% if related_story_page %}
+            <li><a href="{{ related_story_page.url }}">Esta síntesis se relaciona con la historia: {{ related_story_page.title }}</a></li>
+          {% else %}
+            <li>Historia de origen: Próximamente.</li>
+          {% endif %}
+          {% if related_key_page %}
+            <li><a href="{{ related_key_page.url }}">Concepto asociado: {{ related_key_page.title }}</a></li>
+          {% else %}
+            <li>Concepto asociado: Próximamente.</li>
+          {% endif %}
         </ul>
       </section>
 
