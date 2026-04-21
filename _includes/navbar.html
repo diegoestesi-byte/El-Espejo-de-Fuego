@@ -1,34 +1,34 @@
 <header class="nav">
   <div class="brand">
-    <img src="{{ include.base_path }}/images/logo.png" alt="El Espejo del Fuego">
+    <img src="{{ '/images/logo.png' | relative_url }}" alt="El Espejo del Fuego">
   </div>
 
   <nav aria-label="Navegación principal">
     <ul class="nav-menu">
-      <li><a href="{{ include.base_path }}/index.html">Inicio</a></li>
-      <li><a href="{{ include.base_path }}/proyecto.html">El proyecto</a></li>
+      <li><a href="{{ '/index.html' | relative_url }}">Inicio</a></li>
+      <li><a href="{{ '/proyecto.html' | relative_url }}">El proyecto</a></li>
 
       <li class="has-dropdown">
-        <a href="{{ include.base_path }}/historias.html">Historias</a>
+        <a href="{{ '/historias.html' | relative_url }}">Historias</a>
         <ul class="dropdown-menu">
-          <li><a href="{{ include.base_path }}/historias-directas.html">Medidas directas</a></li>
-          <li><a href="{{ include.base_path }}/historias-indirectas.html">Medidas indirectas</a></li>
+          <li><a href="{{ '/historias-directas.html' | relative_url }}">Medidas directas</a></li>
+          <li><a href="{{ '/historias-indirectas.html' | relative_url }}">Medidas indirectas</a></li>
         </ul>
       </li>
 
-      <li><a href="{{ include.base_path }}/claves-del-riesgo.html">Claves del riesgo</a></li>
+      <li><a href="{{ '/claves-del-riesgo.html' | relative_url }}">Claves del riesgo</a></li>
 
       <li class="has-dropdown">
-        <a href="{{ include.base_path }}/conocimiento-y-datos.html">Conocimiento y datos</a>
+        <a href="{{ '/conocimiento-y-datos.html' | relative_url }}">Conocimiento y datos</a>
         <ul class="dropdown-menu">
-          <li><a href="{{ include.base_path }}/casa-fortalecida.html">Casa fortalecida</a></li>
-          <li><a href="{{ include.base_path }}/autoproteccion.html">Espacios de autoprotección</a></li>
-          <li><a href="{{ include.base_path }}/preparacion.html">Preparación para emergencias</a></li>
-          <li><a href="{{ include.base_path }}/respuesta-comunitaria.html">Primera respuesta comunitaria</a></li>
+          <li><a href="{{ '/casa-fortalecida.html' | relative_url }}">Casa fortalecida</a></li>
+          <li><a href="{{ '/autoproteccion.html' | relative_url }}">Espacios de autoprotección</a></li>
+          <li><a href="{{ '/preparacion.html' | relative_url }}">Preparación para emergencias</a></li>
+          <li><a href="{{ '/respuesta-comunitaria.html' | relative_url }}">Primera respuesta comunitaria</a></li>
         </ul>
       </li>
 
-      <li><a href="{{ include.base_path }}/contacto.html">Contacto</a></li>
+      <li><a href="{{ '/contacto.html' | relative_url }}">Contacto</a></li>
     </ul>
   </nav>
 </header>

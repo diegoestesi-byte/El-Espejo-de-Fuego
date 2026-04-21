@@ -1,7 +1,6 @@
 ---
 layout: page
 title: 'El Espejo del Fuego'
-base_path: '.'
 ---
 
   <section class="hero">
@@ -10,7 +9,7 @@ base_path: '.'
       <p>
         El Espejo del Fuego es una plataforma editorial que documenta experiencias locales, explica el fenómeno del fuego y traduce conocimiento técnico para fortalecer la prevención, la preparación y el aprendizaje colectivo.
       </p>
-      <a class="button" href="historias.html">Explorar historias</a>
+      <a class="button" href="{{ '/historias.html' | relative_url }}">Explorar historias</a>
     </div>
   </section>
 
@@ -30,7 +29,7 @@ base_path: '.'
       </div>
 
       <div class="intro-image">
-        <img src="images/espejo-fuego.png" alt="El Espejo del Fuego y su mirada sobre contextos locales">
+        <img src="{{ '/images/espejo-fuego.png' | relative_url }}" alt="El Espejo del Fuego y su mirada sobre contextos locales">
       </div>
     </div>
   </section>
@@ -55,31 +54,31 @@ base_path: '.'
         <p>
           En la población Las Pozas, en la ciudad de Nacimiento, Luis Mariano Navarrete mantiene una práctica sencilla: guardar agua antes de que haga falta. Lo que comenzó como una costumbre en el campo terminó convirtiéndose en una forma concreta de prepararse frente a incendios, cortes de suministro y otras emergencias.
         </p>
-        <a href="articulos/Historias/medidas-directas/01-historia-agua-mariano.html">Leer historia</a>
+        <a href="{{ '/historias/medidas-directas/agua-mariano/' | relative_url }}">Leer historia</a>
       </div>
     </div>
   </section>
 
   <section class="sections">
     <div class="card">
-      <img src="images/icons/historias.png" class="icon" alt="Icono de historias">
+      <img src="{{ '/images/icons/historias.png' | relative_url }}" class="icon" alt="Icono de historias">
       <h3>Historias</h3>
       <p>Relatos, crónicas y reportajes sobre personas y comunidades que desarrollan medidas directas e indirectas.</p>
-      <a href="historias.html">Ver historias</a>
+      <a href="{{ '/historias.html' | relative_url }}">Ver historias</a>
     </div>
 
     <div class="card">
-      <img src="images/icons/fuego-territorio.png" class="icon" alt="Icono de fuego y entorno">
+      <img src="{{ '/images/icons/fuego-territorio.png' | relative_url }}" class="icon" alt="Icono de fuego y entorno">
       <h3>Claves del riesgo</h3>
       <p>Artículos explicativos sobre el comportamiento del fuego, el clima y las condiciones del entorno.</p>
-      <a href="claves-del-riesgo.html">Explorar</a>
+      <a href="{{ '/claves-del-riesgo.html' | relative_url }}">Explorar</a>
     </div>
 
     <div class="card">
-      <img src="images/icons/conocimiento-datos.png" class="icon" alt="Icono de conocimiento y datos">
+      <img src="{{ '/images/icons/conocimiento-datos.png' | relative_url }}" class="icon" alt="Icono de conocimiento y datos">
       <h3>Conocimiento y datos</h3>
       <p>Síntesis de investigaciones, experiencias y herramientas aplicadas para la prevención.</p>
-      <a href="conocimiento-y-datos.html">Acceder</a>
+      <a href="{{ '/conocimiento-y-datos.html' | relative_url }}">Acceder</a>
     </div>
   </section>
 

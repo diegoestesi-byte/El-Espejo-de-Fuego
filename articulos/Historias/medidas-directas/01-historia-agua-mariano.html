@@ -10,7 +10,6 @@ related_story: /historias/medidas-directas/agua-mariano/
 related_key: /claves-del-riesgo/agua-riesgo/
 related_synthesis: /conocimiento-y-datos/preparacion/agua-preparacion/
 permalink: /historias/medidas-directas/agua-mariano/
-base_path: '../../..'
 ---
 
   <section class="report-hero mariano-hero">
@@ -53,7 +52,7 @@ base_path: '../../..'
       </p>
 
       <div class="report-image-block">
-        <img src="/images/mariano-tambor.jpg" alt="Tambor de agua y sistema doméstico de respaldo en la vivienda de Mariano">
+        <img src="{{ '/images/mariano-tambor.jpg' | relative_url }}" alt="Tambor de agua y sistema doméstico de respaldo en la vivienda de Mariano">
         <p class="report-caption">
           El sistema de almacenamiento de agua de Mariano surgió como una forma práctica de anticiparse a cortes de suministro y emergencias.
         </p>
@@ -104,7 +103,7 @@ base_path: '../../..'
       </p>
 
       <div class="report-image-block">
-        <img src="/images/mariano-campo.jpg" alt="Entorno rural de Mariano en Nacimiento, donde el agua móvil le permitió responder a focos de fuego y proteger parte de sus colmenas">
+        <img src="{{ '/images/mariano-campo.jpg' | relative_url }}" alt="Entorno rural de Mariano en Nacimiento, donde el agua móvil le permitió responder a focos de fuego y proteger parte de sus colmenas">
         <p class="report-caption">
           En el predio rural donde trabaja con colmenas, Mariano comenzó a transportar agua como una forma de responder a focos pequeños y proteger parte de su trabajo frente al fuego.
         </p>
@@ -184,12 +183,12 @@ base_path: '../../..'
         {% endfor %}
         <ul>
           {% if related_key_page %}
-            <li><a href="{{ related_key_page.url }}">Clave del riesgo: {{ related_key_page.title }}</a></li>
+            <li><a href="{{ related_key_page.url | relative_url }}">Clave del riesgo: {{ related_key_page.title }}</a></li>
           {% else %}
             <li>Clave del riesgo relacionada: Próximamente.</li>
           {% endif %}
           {% if related_synthesis_page %}
-            <li><a href="{{ related_synthesis_page.url }}">Síntesis: {{ related_synthesis_page.title }}</a></li>
+            <li><a href="{{ related_synthesis_page.url | relative_url }}">Síntesis: {{ related_synthesis_page.title }}</a></li>
           {% else %}
             <li>Síntesis relacionada: Próximamente.</li>
           {% endif %}
