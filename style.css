@@ -436,6 +436,25 @@ p {
   color: var(--color-text-on-dark);
 }
 
+.hero .button,
+.hero-content .button {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 4px;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero .button:hover,
+.hero-content .button:hover {
+  background: var(--color-accent-hover);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
 .page-hero {
   text-align: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('images/hero.png');
