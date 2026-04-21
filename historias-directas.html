@@ -3,7 +3,8 @@ layout: base
 title: Medidas directas | El Espejo del Fuego
 ---
 
-{% assign direct_stories = site.pages | where: 'section', 'historias' | where: 'subtype', 'medidas-directas' | sort: 'date' | reverse %}
+{% assign historias_pages = site.pages | where: 'section', 'historias' | where: 'layout', 'article-historia' %}
+{% assign direct_stories = historias_pages | where: 'subtype', 'medidas-directas' | sort: 'date' | reverse %}
 
 <section class="page-hero small-hero">
   <div class="hero-content">
@@ -35,7 +36,7 @@ title: Medidas directas | El Espejo del Fuego
           {% endif %}
           <div class="article-body">
             <p class="article-meta">Medida directa · Historia</p>
-            <h3>{{ story.title }}</h3>
+            <h3>{{ story.title | default: 'Historia sin título' }}</h3>
             <p>
               {% if story.summary %}
                 {{ story.summary }}
@@ -43,7 +44,11 @@ title: Medidas directas | El Espejo del Fuego
                 Historia de medidas directas disponible para explorar en esta sección.
               {% endif %}
             </p>
-            <a href="{{ story.url | relative_url }}">Leer artículo</a>
+            {% if story.url %}
+              <a href="{{ story.url | relative_url }}">Leer artículo</a>
+            {% else %}
+              <span class="coming-soon-text">Enlace próximamente</span>
+            {% endif %}
           </div>
         </article>
       {% endfor %}
