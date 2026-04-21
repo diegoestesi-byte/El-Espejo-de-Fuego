@@ -14,7 +14,14 @@ title: 'Preparación para emergencias | El Espejo del Fuego'
         <p class="article-meta">Preparación para emergencias · Síntesis</p>
         <h3>Qué dice la evidencia sobre el uso del agua frente a incendios forestales</h3>
         <p>Una síntesis para entender qué muestran los estudios y orientaciones técnicas sobre el uso del agua frente a incendios forestales, sus alcances reales y sus límites en contextos de emergencia.</p>
-        <a href="{{ '/conocimiento-y-datos/preparacion/agua-preparacion/' | relative_url }}">Leer síntesis</a>
+        {% assign related_synthesis = '/conocimiento-y-datos/preparacion/agua-preparacion/' %}
+        {% assign related_synthesis_page = nil %}
+        {% for item in site.pages %}
+          {% if item.permalink == related_synthesis %}
+            {% assign related_synthesis_page = item %}
+          {% endif %}
+        {% endfor %}
+        <a href="{{ related_synthesis_page.url | relative_url }}">Leer síntesis</a>
       </div>
     </article>
   </div>
