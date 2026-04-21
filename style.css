@@ -525,6 +525,10 @@ p {
   background: var(--color-bg-soft);
 }
 
+.intro.compact-intro {
+  padding-top: 40px;
+}
+
 .intro-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1245,6 +1249,10 @@ p {
 
   .articles-section.compact-spacing {
     padding-top: 16px;
+  }
+
+  .intro.compact-intro {
+    padding-top: 28px;
   }
 
   .synthesis-box h2 {
