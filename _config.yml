@@ -1,3 +1,5 @@
+url: 'https://el-espejo-de-fuego.github.io'
+baseurl: '/El-Espejo-de-Fuego'
 title: El Espejo del Fuego
 description: Historias humanas, divulgación y conocimiento aplicado sobre incendios forestales.
 lang: es
@@ -10,22 +12,3 @@ defaults:
       type: "pages"
     values:
       layout: page
-      base_path: "."
-  - scope:
-      path: "articulos/claves-del-riesgo"
-      type: "pages"
-    values:
-      layout: article-clave-riesgo
-      base_path: "../.."
-  - scope:
-      path: "articulos/historias"
-      type: "pages"
-    values:
-      layout: article-historia
-      base_path: "../../.."
-  - scope:
-      path: "articulos/conocimiento-y-datos"
-      type: "pages"
-    values:
-      layout: article-sintesis
-      base_path: "../../.."

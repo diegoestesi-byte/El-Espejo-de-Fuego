@@ -10,7 +10,6 @@ related_story: /historias/medidas-directas/agua-mariano/
 related_key: /claves-del-riesgo/agua-riesgo/
 related_synthesis: /conocimiento-y-datos/preparacion/agua-preparacion/
 permalink: /conocimiento-y-datos/preparacion/agua-preparacion/
-base_path: '../../..'
 ---
 
   <section class="synthesis-hero">
@@ -88,7 +87,7 @@ base_path: '../../..'
       </p>
 
       <div class="synthesis-image-block">
-        <img src="/images/mariano-tambor.jpg" alt="Infraestructura de agua y preparación frente a incendios en zonas habitadas">
+        <img src="{{ '/images/mariano-tambor.jpg' | relative_url }}" alt="Infraestructura de agua y preparación frente a incendios en zonas habitadas">
         <p class="synthesis-caption">
           La disponibilidad de agua puede cumplir funciones distintas frente al fuego, pero su efectividad depende del contexto y de cómo se integra con otras medidas de preparación.
         </p>
@@ -118,12 +117,12 @@ base_path: '../../..'
         {% endfor %}
         <ul>
           {% if related_story_page %}
-            <li><a href="{{ related_story_page.url }}">Esta síntesis se relaciona con la historia: {{ related_story_page.title }}</a></li>
+            <li><a href="{{ related_story_page.url | relative_url }}">Esta síntesis se relaciona con la historia: {{ related_story_page.title }}</a></li>
           {% else %}
             <li>Historia de origen: Próximamente.</li>
           {% endif %}
           {% if related_key_page %}
-            <li><a href="{{ related_key_page.url }}">Concepto asociado: {{ related_key_page.title }}</a></li>
+            <li><a href="{{ related_key_page.url | relative_url }}">Concepto asociado: {{ related_key_page.title }}</a></li>
           {% else %}
             <li>Concepto asociado: Próximamente.</li>
           {% endif %}
