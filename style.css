@@ -1525,14 +1525,31 @@ p {
   color: #5f7466;
 }
 
-.section-title-with-icon {
+.historias-intro .intro-with-icon {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  align-items: flex-start;
+  gap: 20px;
 }
 
-.section-title-with-icon img {
-  width: 28px;
-  height: 28px;
+.historias-intro .intro-icon {
+  width: 42px;
+  height: 42px;
   object-fit: contain;
+  margin-top: 6px;
+  opacity: 0.9;
+}
+
+.historias-intro .intro-text {
+  max-width: 720px;
+}
+
+@media (max-width: 640px) {
+  .historias-intro .intro-with-icon {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .historias-intro .intro-icon {
+    margin-bottom: 10px;
+  }
 }
