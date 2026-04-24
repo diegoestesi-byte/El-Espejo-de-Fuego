@@ -602,6 +602,11 @@ p {
   font-size: 32px;
 }
 
+.historias-intro .intro-text h2 {
+  line-height: 1.2;
+  max-width: 720px;
+}
+
 .intro-text p {
   margin-bottom: var(--space-3);
   font-size: 16.5px;
