@@ -664,6 +664,15 @@ p {
   object-fit: contain;
 }
 
+/* Ajuste específico de iconos en cards */
+.card img[alt*="historias"] {
+  transform: scale(1.2);
+}
+
+.card img[alt*="conocimiento"] {
+  transform: scale(0.85);
+}
+
 .card h3 {
   margin-bottom: 14px;
   font-size: 24px;
