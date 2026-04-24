@@ -923,21 +923,30 @@ p {
 }
 
 .project-icon-circle {
-  width: 54px;
-  height: 54px;
-  border: 1.5px solid rgba(198, 90, 30, 0.28);
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(198, 90, 30, 0.04);
-  flex-shrink: 0;
+
+  border: 1.5px solid rgba(198, 90, 30, 0.25);
+  background: rgba(198, 90, 30, 0.06);
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.project-icon-circle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
 .project-icon-circle img {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
+  opacity: 0.9;
 }
 
 .project-info-text h2 {
