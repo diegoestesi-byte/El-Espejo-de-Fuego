@@ -577,12 +577,12 @@ p {
 }
 
 .historias-intro {
-  padding-bottom: 28px;
+  padding-bottom: 44px;
   margin-bottom: 0;
 }
 
-.historias-intro + .articles-section.historias-latest {
-  padding-top: 28px;
+.historias-intro + .articles-section {
+  padding-top: 44px;
   margin-top: 0;
 }
 
@@ -1551,25 +1551,45 @@ p {
   gap: 20px;
 }
 
+.historias-intro .section-heading {
+  max-width: 1040px;
+}
+
+.historias-intro h2 {
+  white-space: nowrap;
+}
+
+.historias-intro p {
+  max-width: 980px;
+}
+
 .historias-intro .intro-icon {
-  width: 42px;
-  height: 42px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
-  margin-top: 6px;
+  margin-top: 4px;
   opacity: 0.9;
 }
 
 .historias-intro .intro-text {
-  max-width: 720px;
+  flex: 1;
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  .historias-intro h2 {
+    white-space: normal;
+  }
 }
 
 @media (max-width: 640px) {
   .historias-intro .intro-with-icon {
     flex-direction: column;
-    align-items: flex-start;
+    gap: 10px;
   }
 
   .historias-intro .intro-icon {
-    margin-bottom: 10px;
+    width: 48px;
+    height: 48px;
   }
 }
