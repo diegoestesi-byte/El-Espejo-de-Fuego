@@ -141,7 +141,7 @@ p {
   max-width: var(--container-lg);
   margin: 0 auto;
   padding: clamp(24px, 4vw, var(--space-8));
-  background: var(--color-bg-panel);
+  background: #faf8f4;
 }
 
 .content h2 {
