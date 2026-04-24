@@ -577,7 +577,13 @@ p {
 }
 
 .historias-intro {
-  margin-bottom: 32px;
+  padding-bottom: 28px;
+  margin-bottom: 0;
+}
+
+.historias-intro + .articles-section.historias-latest {
+  padding-top: 28px;
+  margin-top: 0;
 }
 
 .intro.compact-intro {
