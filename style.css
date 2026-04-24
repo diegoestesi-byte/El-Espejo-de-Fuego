@@ -861,6 +861,11 @@ p {
   margin-top: var(--space-3);
 }
 
+.editorial-content {
+  border-left: 6px solid var(--color-accent);
+  padding-left: 32px;
+}
+
 /* =========================
    9) ARTÍCULOS (HISTORIA, CLAVES, SÍNTESIS)
    ========================= */
