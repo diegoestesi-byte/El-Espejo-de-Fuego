@@ -209,14 +209,19 @@ p {
   align-items: center;
   justify-content: space-between;
   gap: 30px;
-  padding: 18px 40px;
+  padding: 20px 40px;
   background: var(--color-bg-dark);
   color: #fff;
 }
 
+.brand {
+  display: inline-flex;
+  align-items: center;
+}
+
 .brand img {
   width: auto;
-  height: 60px;
+  height: 72px;
 }
 
 .nav nav {
@@ -251,6 +256,10 @@ p {
   font-weight: 600;
   white-space: nowrap;
   color: #fff;
+}
+
+.nav .brand {
+  padding: 0;
 }
 
 .nav a:hover {
@@ -1308,11 +1317,11 @@ p {
 
 @media (max-width: 640px) {
   .nav {
-    padding: 14px 16px;
+    padding: 16px 16px;
   }
 
   .brand img {
-    height: 52px;
+    height: 58px;
   }
 
   .hero {
