@@ -576,6 +576,10 @@ p {
   background: var(--color-bg-soft);
 }
 
+.historias-intro {
+  margin-bottom: 64px;
+}
+
 .intro.compact-intro {
   padding-top: 40px;
 }
