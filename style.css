@@ -608,7 +608,8 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-6);
-  margin-top: 26px;
+  max-width: 1100px;
+  margin: 26px auto 0;
 }
 
 .story-type-box {
