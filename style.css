@@ -1520,3 +1520,15 @@ p {
   font-weight: 700;
   color: #5f7466;
 }
+
+.section-title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-title-with-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
