@@ -138,26 +138,43 @@ p {
    ========================= */
 
 .content {
-  max-width: var(--container-lg);
+  padding: 40px 48px;
+  max-width: 720px;
   margin: 0 auto;
-  padding: clamp(24px, 4vw, var(--space-8));
+  position: relative;
   background: #faf8f4;
 }
 
+.content::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 40px;
+  bottom: 40px;
+  width: 6px;
+  background: var(--color-accent);
+  border-radius: 3px;
+}
+
 .content h2 {
-  margin-top: 42px;
-  margin-bottom: 14px;
+  margin-top: 48px;
+  margin-bottom: 12px;
 }
 
 .content h2:first-of-type {
   margin-top: 0;
 }
 
+.content h2:not(:first-of-type) {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 24px;
+}
+
 .content p {
   max-width: 760px;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
   font-size: 17px;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .content p:last-child {
