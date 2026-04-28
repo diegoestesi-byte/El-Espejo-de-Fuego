@@ -3,26 +3,43 @@ layout: page
 title: 'Preparación para emergencias | El Espejo del Fuego'
 ---
 
+{% assign contenidos = site.pages | where: 'section', 'conocimiento-y-datos' | where: 'subsection', 'preparacion' | where: 'layout', 'article-sintesis' | sort: 'date' | reverse %}
+
 <section class="page-hero small-hero"><div class="hero-content"><h2>Preparación para emergencias</h2><p>Herramientas para anticipar escenarios críticos, organizar recursos y mejorar la toma de decisiones antes del fuego.</p></div></section>
 <main class="content"><p>Aquí se integrarán contenidos sobre planes familiares, rutas de evacuación, comunicación en crisis y gestión de suministros básicos.</p><p>La página funciona como portada inicial para futuras síntesis y artículos aplicados a contextos urbanos y rurales.</p></main>
 
-<section class="articles-section compact-spacing">
-  <div class="articles-grid">
-    <article class="article-card" aria-label="Síntesis sobre uso del agua frente a incendios forestales">
-      <div class="article-image direct-2" aria-hidden="true"></div>
-      <div class="article-body">
-        <p class="article-meta">Preparación para emergencias · Síntesis</p>
-        <h3>Qué dice la evidencia sobre el uso del agua frente a incendios forestales</h3>
-        <p>Una síntesis para entender qué muestran los estudios y orientaciones técnicas sobre el uso del agua frente a incendios forestales, sus alcances reales y sus límites en contextos de emergencia.</p>
-        {% assign related_synthesis = '/conocimiento-y-datos/preparacion/agua-preparacion/' %}
-        {% assign related_synthesis_page = nil %}
-        {% for item in site.pages %}
-          {% if item.permalink == related_synthesis %}
-            {% assign related_synthesis_page = item %}
+{% if contenidos.size > 0 %}
+  <section class="articles-section compact-spacing">
+    <div class="articles-grid">
+      {% for item in contenidos %}
+        <article class="article-card">
+          {% if item.image %}
+            <div class="article-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('{{ item.image | relative_url }}');"></div>
+          {% else %}
+            <div class="article-image placeholder-image"></div>
           {% endif %}
-        {% endfor %}
-        <a href="{{ related_synthesis_page.url | relative_url }}">Leer síntesis</a>
-      </div>
-    </article>
-  </div>
-</section>
+          <div class="article-body">
+            <p class="article-meta">{{ item.meta | default: 'Conocimiento y datos · Síntesis' }}</p>
+            <h3>{{ item.title | default: 'Contenido sin título' }}</h3>
+            <p>{{ item.summary | default: item.excerpt | default: 'Contenido disponible para explorar en esta sección.' }}</p>
+            <a href="{{ item.url | relative_url }}">Leer contenido</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% else %}
+  <section class="articles-section compact-spacing">
+    <div class="articles-grid">
+      <article class="article-card placeholder-card" aria-label="Próximamente preparación para emergencias">
+        <div class="article-image placeholder-image" aria-hidden="true"></div>
+        <div class="article-body">
+          <p class="article-meta">Preparación para emergencias · Próxima publicación</p>
+          <h3>Próximamente</h3>
+          <p>Aquí se publicará el primer contenido de esta sección.</p>
+          <span class="coming-soon-text">Próximamente</span>
+        </div>
+      </article>
+    </div>
+  </section>
+{% endif %}

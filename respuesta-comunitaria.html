@@ -3,19 +3,43 @@ layout: page
 title: 'Primera respuesta comunitaria | El Espejo del Fuego'
 ---
 
+{% assign contenidos = site.pages | where: 'section', 'conocimiento-y-datos' | where: 'subsection', 'respuesta-comunitaria' | where: 'layout', 'article-sintesis' | sort: 'date' | reverse %}
+
 <section class="page-hero small-hero"><div class="hero-content"><h2>Primera respuesta comunitaria</h2><p>Experiencias de coordinación local para actuar con rapidez, cuidado mutuo y criterios compartidos ante una emergencia.</p></div></section>
 <main class="content"><p>Este espacio reunirá prácticas de organización barrial, roles básicos de apoyo, comunicación local y aprendizajes de respuesta temprana.</p><p>La estructura está abierta para incorporar futuras historias, protocolos simplificados y herramientas de trabajo comunitario.</p></main>
 
-<section class="articles-section compact-spacing">
-  <div class="articles-grid">
-    <article class="article-card placeholder-card" aria-label="Próximamente primera respuesta comunitaria">
-      <div class="article-image placeholder-image" aria-hidden="true"></div>
-      <div class="article-body">
-        <p class="article-meta">Primera respuesta comunitaria · Próxima publicación</p>
-        <h3>Próximamente</h3>
-        <p>Aquí se publicará el primer contenido de esta sección.</p>
-        <span class="coming-soon-text">Próximamente</span>
-      </div>
-    </article>
-  </div>
-</section>
+{% if contenidos.size > 0 %}
+  <section class="articles-section compact-spacing">
+    <div class="articles-grid">
+      {% for item in contenidos %}
+        <article class="article-card">
+          {% if item.image %}
+            <div class="article-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('{{ item.image | relative_url }}');"></div>
+          {% else %}
+            <div class="article-image placeholder-image"></div>
+          {% endif %}
+          <div class="article-body">
+            <p class="article-meta">{{ item.meta | default: 'Conocimiento y datos · Síntesis' }}</p>
+            <h3>{{ item.title | default: 'Contenido sin título' }}</h3>
+            <p>{{ item.summary | default: item.excerpt | default: 'Contenido disponible para explorar en esta sección.' }}</p>
+            <a href="{{ item.url | relative_url }}">Leer contenido</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% else %}
+  <section class="articles-section compact-spacing">
+    <div class="articles-grid">
+      <article class="article-card placeholder-card" aria-label="Próximamente primera respuesta comunitaria">
+        <div class="article-image placeholder-image" aria-hidden="true"></div>
+        <div class="article-body">
+          <p class="article-meta">Primera respuesta comunitaria · Próxima publicación</p>
+          <h3>Próximamente</h3>
+          <p>Aquí se publicará el primer contenido de esta sección.</p>
+          <span class="coming-soon-text">Próximamente</span>
+        </div>
+      </article>
+    </div>
+  </section>
+{% endif %}
