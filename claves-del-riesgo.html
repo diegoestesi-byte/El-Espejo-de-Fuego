@@ -3,6 +3,8 @@ layout: page
 title: 'Claves del riesgo | El Espejo del Fuego'
 ---
 
+{% assign claves_pages = site.pages | where: 'section', 'claves-del-riesgo' | where: 'layout', 'article-clave-riesgo' | sort: 'date' | reverse %}
+
   <section class="page-hero small-hero">
     <div class="hero-content">
       <h2>Claves del riesgo</h2>
@@ -29,21 +31,36 @@ title: 'Claves del riesgo | El Espejo del Fuego'
 
   <section class="articles-section compact-spacing">
     <div class="articles-grid">
+      {% if claves_pages.size > 0 %}
+        {% for clave in claves_pages %}
+          <article class="article-card">
+            {% if clave.image %}
+              <div class="article-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('{{ clave.image | relative_url }}');"></div>
+            {% else %}
+              <div class="article-image {% cycle 'direct-2', 'direct-1', 'mariano-card' %}"></div>
+            {% endif %}
+            <div class="article-body">
+              <p class="article-meta">Clave del riesgo · Artículo</p>
+              <h3>{{ clave.title | default: 'Artículo sin título' }}</h3>
+              <p>
+                {% if clave.summary %}
+                  {{ clave.summary }}
+                {% else %}
+                  Artículo explicativo disponible para explorar en esta sección.
+                {% endif %}
+              </p>
+              {% if clave.url %}
+                <a href="{{ clave.url | relative_url }}">Leer artículo</a>
+              {% else %}
+                <span class="coming-soon-text">Próximamente</span>
+              {% endif %}
+            </div>
+          </article>
+        {% endfor %}
+      {% endif %}
 
-      <article class="article-card">
-        <div class="article-image direct-2"></div>
-        <div class="article-body">
-          <p class="article-meta">Agua disponible · Preparación</p>
-          <h3>¿Hasta qué punto sirve tener agua disponible frente a un incendio?</h3>
-          <p>
-            Una nota sobre los límites, alcances y decisiones reales que intervienen cuando se piensa en el agua como recurso frente a incendios forestales.
-          </p>
-          <a href="{{ '/claves-del-riesgo/agua-riesgo/' | relative_url }}">Leer artículo</a>
-        </div>
-      </article>
-
-      <article class="article-card">
-        <div class="article-image direct-1"></div>
+      <article class="article-card placeholder-card" aria-label="Próximamente artículos de claves del riesgo">
+        <div class="article-image placeholder-image" aria-hidden="true"></div>
         <div class="article-body">
           <p class="article-meta">Próximamente · Claves del riesgo</p>
           <h3>Próximamente</h3>
