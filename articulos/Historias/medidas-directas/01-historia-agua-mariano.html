@@ -7,7 +7,7 @@ date: 2026-04-20
 summary: 'En Las Pozas, Mariano convirtió una práctica cotidiana —guardar agua— en una estrategia concreta para prepararse frente a incendios, cortes de suministro y otras emergencias.'
 image: /images/mariano-tambor.jpg
 related_story: /historias/medidas-directas/agua-mariano/
-related_key: /claves-del-riesgo/agua-riesgo/
+related_key: /claves-del-riesgo/ahumadores-riesgo/
 related_synthesis: /conocimiento-y-datos/preparacion/agua-preparacion/
 permalink: /historias/medidas-directas/agua-mariano/
 ---
@@ -40,7 +40,7 @@ permalink: /historias/medidas-directas/agua-mariano/
       <h2>Guardar agua antes de que haga falta</h2>
 
       <p>
-        “Siempre hay que estar preparado”, explica. “Si se corta la luz o pasa algo, el agua tiene que estar ahí”.
+        "Siempre hay que estar preparado", explica. "Si se corta la luz o pasa algo, el agua tiene que estar ahí".
       </p>
 
       <p>
@@ -69,7 +69,11 @@ permalink: /historias/medidas-directas/agua-mariano/
       </p>
 
       <p>
-        “Dentro del ahumador hay brasas”, explica. “Si uno lo deja mal tapado o se cae, puede empezar un incendio”.
+        "Dentro del ahumador hay brasas", explica. "Si uno lo deja mal tapado o se cae, puede empezar un incendio".
+      </p>
+
+      <p class="report-crosslink">
+        El ahumador no es una excepción. En actividades productivas donde el fuego forma parte del trabajo cotidiano, el riesgo no siempre viene de afuera. A veces está en la herramienta que se lleva en la mano. <a href="{{ '/claves-del-riesgo/ahumadores-riesgo/' | relative_url }}">Cómo se genera ese riesgo —y en qué condiciones una brasa puede convertirse en un incendio— es algo que vale la pena entender por separado.</a>
       </p>
 
       <p>
@@ -91,7 +95,7 @@ permalink: /historias/medidas-directas/agua-mariano/
       </p>
 
       <p>
-        “Salimos como a las cuatro de la mañana”, recuerda. “El fuego venía avanzando y tuvimos que escapar hacia Angol”.
+        "Salimos como a las cuatro de la mañana", recuerda. "El fuego venía avanzando y tuvimos que escapar hacia Angol".
       </p>
 
       <p>
@@ -100,6 +104,10 @@ permalink: /historias/medidas-directas/agua-mariano/
 
       <p>
         Algunas lograron salvarse. En parte gracias al agua que llevaba en su vehículo y que utilizó para enfriar estructuras y evitar que el fuego terminara de consumirlas. Las pérdidas fueron grandes, pero suficientes colmenas sobrevivieron como para continuar con el trabajo.
+      </p>
+
+      <p class="report-crosslink">
+        Lo que ocurrió esa noche plantea una pregunta que va más allá de la historia de Mariano: ¿hasta qué punto el agua es suficiente? <a href="{{ '/conocimiento-y-datos/preparacion/agua-preparacion/' | relative_url }}">La evidencia sobre preparación frente a incendios muestra que el agua es un recurso real, pero que su eficacia depende siempre de otros factores. Eso tiene una explicación más amplia.</a>
       </p>
 
       <div class="report-image-block">
@@ -126,7 +134,7 @@ permalink: /historias/medidas-directas/agua-mariano/
       </p>
 
       <p>
-        “Yo iba al río a buscar agua y llenaba el estanque”, recuerda. “Después la gente venía a buscar”.
+        "Yo iba al río a buscar agua y llenaba el estanque", recuerda. "Después la gente venía a buscar".
       </p>
 
       <p>
@@ -158,7 +166,7 @@ permalink: /historias/medidas-directas/agua-mariano/
       </p>
 
       <p>
-        “No es algo complicado”, dice. “Es cosa de anticiparse un poco”.
+        "No es algo complicado", dice. "Es cosa de anticiparse un poco".
       </p>
 
       <p>
@@ -171,31 +179,21 @@ permalink: /historias/medidas-directas/agua-mariano/
 
       <section class="related-content">
         <h3>Explorar este tema</h3>
-        {% assign related_key_page = nil %}
-        {% assign related_synthesis_page = nil %}
-        {% for item in site.pages %}
-          {% if item.permalink == page.related_key %}
-            {% assign related_key_page = item %}
-          {% endif %}
-          {% if item.permalink == page.related_synthesis %}
-            {% assign related_synthesis_page = item %}
-          {% endif %}
-        {% endfor %}
         <ul>
-          {% if related_key_page %}
-            <li><a href="{{ related_key_page.url | relative_url }}">Clave del riesgo: {{ related_key_page.title }}</a></li>
-          {% else %}
-            <li>Clave del riesgo relacionada: Próximamente.</li>
-          {% endif %}
-          {% if related_synthesis_page %}
-            <li><a href="{{ related_synthesis_page.url | relative_url }}">Síntesis: {{ related_synthesis_page.title }}</a></li>
-          {% else %}
-            <li>Síntesis relacionada: Próximamente.</li>
-          {% endif %}
+          <li>
+            <a href="{{ '/claves-del-riesgo/ahumadores-riesgo/' | relative_url }}">
+              <strong>Clave del riesgo — Cuando una herramienta cotidiana puede iniciar un incendio</strong>
+            </a>
+            <p>El ahumador que Mariano usa con sus colmenas mantiene brasas activas durante horas. Esta nota explica cómo una práctica productiva habitual puede convertirse en un punto de ignición cuando se combina con vegetación seca y condiciones favorables al fuego.</p>
+          </li>
+          <li>
+            <a href="{{ '/conocimiento-y-datos/preparacion/agua-preparacion/' | relative_url }}">
+              <strong>Síntesis — El agua disponible no es suficiente</strong>
+            </a>
+            <p>Mariano tenía agua cuando llegó el incendio de 2023. Aun así, perdió la mayor parte de sus colmenas. La evidencia sobre preparación frente a incendios muestra por qué el agua es necesaria pero no suficiente, y qué otros factores determinan el resultado de una emergencia.</p>
+          </li>
         </ul>
       </section>
 
     </article>
   </main>
-
-  
