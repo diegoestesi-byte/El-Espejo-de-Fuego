@@ -1608,3 +1608,14 @@ p {
     height: 48px;
   }
 }
+
+.note-crosslink {
+  font-style: italic;
+  border-left: 3px solid currentColor;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+}
+
+.note-crosslink a {
+  text-decoration: underline;
+}
