@@ -1089,6 +1089,24 @@ p {
   background: var(--color-bg-soft-alt);
 }
 
+
+aside.report-crosslink {
+  margin: 1.5rem 0;
+  padding: 1rem 1rem 1rem 1.25rem;
+  border-left: 3px solid currentColor;
+  font-style: italic;
+}
+
+aside.report-crosslink p {
+  margin: 0 0 0.5rem;
+}
+
+aside.report-crosslink a {
+  font-style: normal;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
 .synthesis-box {
   margin: 0 0 22px;
   padding: 22px 24px;
