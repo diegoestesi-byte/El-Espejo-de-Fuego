@@ -3,7 +3,7 @@ layout: page
 title: 'Preparación para emergencias | El Espejo del Fuego'
 ---
 
-{% assign contenidos = site.pages | where: 'section', 'conocimiento-y-datos' | where: 'subsection', 'preparacion' | where: 'layout', 'article-sintesis' | sort: 'date' | reverse %}
+{% assign contenidos = site.pages | where_exp: 'item', "item.layout == 'article-sintesis' and item.section == 'conocimiento-y-datos' and (item.subtype == 'preparacion' or item.subsection == 'preparacion')" | sort: 'date' | reverse %}
 
 <section class="page-hero small-hero"><div class="hero-content"><h2>Preparación para emergencias</h2><p>Herramientas para anticipar escenarios críticos, organizar recursos y tomar decisiones informadas ante un incendio.</p></div></section>
 <main class="content"><p>Aquí se integran herramientas para planificar y actuar antes, durante y después de un incendio forestal, con foco en la seguridad de las personas y la reducción de la improvisación.</p><p>Se abordan aspectos como planes familiares, rutas de evacuación, puntos de encuentro, comunicación en crisis, almacenamiento de agua y organización de suministros básicos.</p><p>El énfasis está en la anticipación y en la toma de decisiones oportunas, considerando que una evacuación temprana y una preparación adecuada son factores determinantes para la seguridad.</p></main>
@@ -21,6 +21,7 @@ title: 'Preparación para emergencias | El Espejo del Fuego'
           <div class="article-body">
             <p class="article-meta">{{ item.meta | default: 'Conocimiento y datos · Síntesis' }}</p>
             <h3>{{ item.title | default: 'Contenido sin título' }}</h3>
+            {% if item.date %}<p class="article-date">{{ item.date | date: "%d/%m/%Y" }}</p>{% endif %}
             <p>{{ item.summary | default: item.excerpt | default: 'Contenido disponible para explorar en esta sección.' }}</p>
             <a href="{{ item.url | relative_url }}">Leer contenido</a>
           </div>
