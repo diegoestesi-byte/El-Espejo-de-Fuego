@@ -3,7 +3,7 @@ layout: page
 title: 'Casa fortalecida | El Espejo del Fuego'
 ---
 
-{% assign contenidos = site.pages | where: 'section', 'conocimiento-y-datos' | where: 'subsection', 'casa-fortalecida' | where: 'layout', 'article-sintesis' | sort: 'date' | reverse %}
+{% assign contenidos = site['conocimiento-y-datos'] | where: 'subsection', 'casa-fortalecida' | sort: 'date' | reverse %}
 
 <section class="page-hero small-hero"><div class="hero-content"><h2>Casa fortalecida</h2><p>Claves para reducir la vulnerabilidad de la vivienda frente a pavesas, brasas, calor radiante y contacto directo con el fuego.</p></div></section>
 <main class="content"><p>Este ámbito reúne criterios prácticos sobre materiales, diseño constructivo, mantención y decisiones de uso que permiten disminuir la vulnerabilidad de las viviendas en zonas expuestas a incendios forestales.</p><p>Se abordan elementos críticos como techumbres, ventilaciones, muros, ventanas, terrazas y puntos de acumulación de material combustible, considerando su comportamiento frente al calor, las pavesas y la propagación del fuego.</p><p>El enfoque está en identificar puntos débiles de la vivienda y aplicar medidas concretas que aumenten su capacidad de resistir un incendio, entendiendo que ninguna casa es completamente a prueba del fuego, pero sí puede reducir significativamente su riesgo.</p></main>

@@ -1,14 +1,39 @@
 url: "https://diegostesi-byte.github.io"
 baseurl: "/El-Espejo-de-Fuego"
 title: El Espejo del Fuego
-description: Historias humanas, divulgación y conocimiento aplicado sobre incendios forestales.
+description: Historias humanas, divulgación y conocimiento aplicado
+  sobre incendios forestales.
 lang: es
 markdown: kramdown
 permalink: pretty
 
+collections_dir: articulos
+
+collections:
+  historias:
+    output: true
+  claves-del-riesgo:
+    output: true
+  conocimiento-y-datos:
+    output: true
+
 defaults:
   - scope:
       path: ""
-      type: "pages"
     values:
       layout: page
+  - scope:
+      path: ""
+      type: historias
+    values:
+      layout: article-historia
+  - scope:
+      path: ""
+      type: claves-del-riesgo
+    values:
+      layout: article-clave-riesgo
+  - scope:
+      path: ""
+      type: conocimiento-y-datos
+    values:
+      layout: article-sintesis
