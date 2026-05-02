@@ -3,7 +3,7 @@ layout: page
 title: 'Claves del riesgo | El Espejo del Fuego'
 ---
 
-{% assign claves_pages = site.pages | where: 'section', 'claves-del-riesgo' | where: 'layout', 'article-clave-riesgo' | sort: 'date' | reverse %}
+{% assign claves_pages = site['claves-del-riesgo'] | sort: 'date' | reverse %}
 
   <section class="page-hero small-hero">
     <div class="hero-content">

@@ -3,7 +3,7 @@ layout: page
 title: 'Preparación para emergencias | El Espejo del Fuego'
 ---
 
-{% assign contenidos = site.pages | where_exp: 'item', "item.layout == 'article-sintesis' and item.section == 'conocimiento-y-datos' and (item.subtype == 'preparacion' or item.subsection == 'preparacion' or item.url contains '/conocimiento-y-datos/preparacion/')" | sort: 'date' | reverse %}
+{% assign contenidos = site['conocimiento-y-datos'] | where: 'subsection', 'preparacion' | sort: 'date' | reverse %}
 
 <section class="page-hero small-hero"><div class="hero-content"><h2>Preparación para emergencias</h2><p>Herramientas para anticipar escenarios críticos, organizar recursos y tomar decisiones informadas ante un incendio.</p></div></section>
 <main class="content"><p>Aquí se integran herramientas para planificar y actuar antes, durante y después de un incendio forestal, con foco en la seguridad de las personas y la reducción de la improvisación.</p><p>Se abordan aspectos como planes familiares, rutas de evacuación, puntos de encuentro, comunicación en crisis, almacenamiento de agua y organización de suministros básicos.</p><p>El énfasis está en la anticipación y en la toma de decisiones oportunas, considerando que una evacuación temprana y una preparación adecuada son factores determinantes para la seguridad.</p></main>

@@ -3,9 +3,9 @@ layout: base
 title: Historias | El Espejo del Fuego
 ---
 
-{% assign historias_pages = site.pages | where: 'section', 'historias' %}
-{% assign direct_stories = historias_pages | where: 'subtype', 'medidas-directas' | sort: 'date' | reverse %}
-{% assign indirect_stories = historias_pages | where: 'subtype', 'medidas-indirectas' | sort: 'date' | reverse %}
+{% assign direct_stories = site.historias | where: 'subtype', 'medidas-directas' | sort: 'date' | reverse %}
+{% assign indirect_stories = site.historias | where: 'subtype', 'medidas-indirectas' | sort: 'date' | reverse %}
+
 {% assign latest_direct = direct_stories | first %}
 {% assign latest_indirect = indirect_stories | first %}
 

@@ -3,8 +3,8 @@ layout: base
 title: Medidas indirectas | El Espejo del Fuego
 ---
 
-{% assign historias_pages = site.pages | where: 'section', 'historias' | where: 'layout', 'article-historia' %}
-{% assign indirect_stories = historias_pages | where: 'subtype', 'medidas-indirectas' | sort: 'date' | reverse %}
+{% assign indirect_stories = site.historias | where: 'subtype', 'medidas-indirectas' | sort: 'date' | reverse %}
+
 
 <section class="page-hero small-hero">
   <div class="hero-content">
