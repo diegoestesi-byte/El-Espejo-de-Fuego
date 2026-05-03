@@ -21,7 +21,6 @@ title: 'Preparación para emergencias | El Espejo del Fuego'
           <div class="article-body">
             <p class="article-meta">{{ item.meta | default: 'Conocimiento y datos · Síntesis' }}</p>
             <h3>{{ item.title | default: 'Contenido sin título' }}</h3>
-            {% if item.date %}<p class="article-date">{{ item.date | date: "%d/%m/%Y" }}</p>{% endif %}
             <p>{{ item.summary | default: item.excerpt | default: 'Contenido disponible para explorar en esta sección.' }}</p>
             <a href="{{ item.url | relative_url }}">Leer contenido</a>
           </div>
