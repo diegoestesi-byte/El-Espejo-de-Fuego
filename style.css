@@ -557,6 +557,33 @@ p {
   line-height: 1.15;
 }
 
+
+.article-byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 18px 0 0;
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #e6e1d8;
+}
+
+.article-byline span + span {
+  position: relative;
+}
+
+.article-byline span + span::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 0.15em;
+  width: 1px;
+  height: 1em;
+  background: rgba(230, 225, 216, 0.55);
+}
 .note-deck,
 .synthesis-deck,
 .report-deck {
@@ -1001,6 +1028,11 @@ p {
 }
 
 @media (max-width: 640px) {
+  .article-byline {
+    gap: 6px 14px;
+    font-size: 12px;
+  }
+
   .project-info-item {
     grid-template-columns: 1fr;
     gap: 12px;
