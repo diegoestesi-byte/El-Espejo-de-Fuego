@@ -789,7 +789,7 @@ p {
 }
 
 .featured-image.mariano {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('images/mariano.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('images/mariano-tambor-casa.jpg');
 }
 
 .featured-text {
@@ -846,11 +846,11 @@ p {
 
 .mariano-card,
 .article-image.mariano-card {
-  background-image: url('images/mariano.jpg');
+  background-image: url('images/mariano-tambor-casa.jpg');
 }
 
 .article-image.mariano-card {
-  background-image: url('images/mariano-tambor.jpg');
+  background-image: url('images/mariano-tambor-casa.jpg');
 }
 
 .article-body {
