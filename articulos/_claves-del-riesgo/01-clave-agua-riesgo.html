@@ -26,8 +26,24 @@ permalink: /claves-del-riesgo/ahumadores-riesgo/
     </p>
 
     <p class="article-byline">
-      <span>Por {{ page.author | default: 'El Espejo del Fuego' }}</span>
-      <span>Publicado el {{ page.date | date: "%d/%m/%Y" }}</span>
+      <span>Por <strong>{{ page.author | default: 'El Espejo del Fuego' }}</strong></span>
+      <span>Publicado <strong>
+        {% assign m = page.date | date: "%-m" %}
+        {% case m %}
+          {% when "1" %}{{ page.date | date: "%-d" }} de enero, {{ page.date | date: "%Y" }}
+          {% when "2" %}{{ page.date | date: "%-d" }} de febrero, {{ page.date | date: "%Y" }}
+          {% when "3" %}{{ page.date | date: "%-d" }} de marzo, {{ page.date | date: "%Y" }}
+          {% when "4" %}{{ page.date | date: "%-d" }} de abril, {{ page.date | date: "%Y" }}
+          {% when "5" %}{{ page.date | date: "%-d" }} de mayo, {{ page.date | date: "%Y" }}
+          {% when "6" %}{{ page.date | date: "%-d" }} de junio, {{ page.date | date: "%Y" }}
+          {% when "7" %}{{ page.date | date: "%-d" }} de julio, {{ page.date | date: "%Y" }}
+          {% when "8" %}{{ page.date | date: "%-d" }} de agosto, {{ page.date | date: "%Y" }}
+          {% when "9" %}{{ page.date | date: "%-d" }} de septiembre, {{ page.date | date: "%Y" }}
+          {% when "10" %}{{ page.date | date: "%-d" }} de octubre, {{ page.date | date: "%Y" }}
+          {% when "11" %}{{ page.date | date: "%-d" }} de noviembre, {{ page.date | date: "%Y" }}
+          {% when "12" %}{{ page.date | date: "%-d" }} de diciembre, {{ page.date | date: "%Y" }}
+        {% endcase %}
+      </strong></span>
     </p>
   </div>
 </section>
