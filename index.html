@@ -45,18 +45,54 @@ title: 'El Espejo del Fuego'
     </div>
   </section>
 
+  {% assign featured_story = site.historias | sort: 'date' | reverse | first %}
+
   <section class="featured-story">
     <h2>Historia destacada</h2>
-    <div class="featured-card">
-      <div class="featured-image mariano"></div>
-      <div class="featured-text">
-        <h3>El que guarda siempre tiene: agua disponible antes de una emergencia</h3>
-        <p>
-          En la población Las Pozas, en la ciudad de Nacimiento, Luis Mariano Navarrete mantiene una práctica sencilla: guardar agua antes de que haga falta. Lo que comenzó como una costumbre en el campo terminó convirtiéndose en una forma concreta de prepararse frente a incendios, cortes de suministro y otras emergencias.
-        </p>
-        <a href="{{ '/historias/medidas-directas/agua-mariano/' | relative_url }}">Leer historia</a>
+
+    {% if featured_story %}
+      <div class="featured-card">
+        {% if featured_story.image %}
+          <div class="featured-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('{{ featured_story.image | relative_url }}');"></div>
+        {% else %}
+          <div class="featured-image"></div>
+        {% endif %}
+
+        <div class="featured-text">
+          <p class="article-meta">
+            {% if featured_story.subtype == 'medidas-directas' %}
+              Medida directa · Historia destacada
+            {% elsif featured_story.subtype == 'medidas-indirectas' %}
+              Medida indirecta · Historia destacada
+            {% else %}
+              Historia destacada
+            {% endif %}
+          </p>
+
+          <h3>{{ featured_story.title }}</h3>
+
+          <p>
+            {% if featured_story.summary %}
+              {{ featured_story.summary }}
+            {% else %}
+              Historia disponible para explorar en esta sección.
+            {% endif %}
+          </p>
+
+          <a href="{{ featured_story.url | relative_url }}">Leer historia</a>
+        </div>
       </div>
-    </div>
+    {% else %}
+      <div class="featured-card">
+        <div class="featured-image"></div>
+        <div class="featured-text">
+          <p class="article-meta">Historia destacada</p>
+          <h3>Próximamente</h3>
+          <p>Esta sección destacará automáticamente una historia cuando esté publicada.</p>
+          <span class="coming-soon-text">Próximamente</span>
+        </div>
+      </div>
+    {% endif %}
   </section>
 
   <section class="sections">
