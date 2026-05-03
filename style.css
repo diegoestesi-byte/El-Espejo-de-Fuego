@@ -599,12 +599,12 @@ p {
 }
 
 .historias-intro {
-  padding-bottom: 44px;
+  padding-bottom: 24px;
   margin-bottom: 0;
 }
 
-.historias-intro + .articles-section {
-  padding-top: 44px;
+.historias-intro + .articles-section.historias-latest {
+  padding-top: 24px;
   margin-top: 0;
 }
 
