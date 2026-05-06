@@ -245,6 +245,9 @@ p {
 .brand img {
   width: auto;
   height: 72px;
+  max-width: 120px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .nav nav {
@@ -1334,9 +1337,9 @@ aside.report-crosslink a {
   }
 
   .nav {
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    gap: var(--space-3);
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
     padding: 18px 24px;
   }
 
@@ -1378,6 +1381,7 @@ aside.report-crosslink a {
   }
 
   .has-dropdown {
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
@@ -1398,24 +1402,39 @@ aside.report-crosslink a {
     position: static;
     display: none;
     grid-column: 1 / -1;
+    width: 100%;
+    max-width: none;
     min-width: 0;
-    padding: 2px 0 6px;
+    margin: 0;
+    padding: 4px 0 8px 14px;
     border: 0;
-    border-radius: var(--radius-sm);
+    border-radius: 0;
     box-shadow: none;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.04);
     opacity: 1;
     visibility: visible;
     transform: none;
+    pointer-events: auto;
   }
 
   .has-dropdown.is-submenu-open > .dropdown-menu {
     display: block;
   }
 
+  .dropdown-menu li {
+    width: 100%;
+  }
+
   .dropdown-menu a {
+    display: block;
+    width: 100%;
     padding: 10px 14px;
     font-size: 14.5px;
+    line-height: 1.35;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+    color: var(--color-text-on-dark);
   }
 
   .hero {
@@ -1537,8 +1556,15 @@ aside.report-crosslink a {
     padding: 16px 16px;
   }
 
+  .brand {
+    flex-shrink: 0;
+  }
+
   .brand img {
-    height: 58px;
+    width: auto;
+    height: 54px;
+    max-width: 110px;
+    object-fit: contain;
   }
 
   .hero {
