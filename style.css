@@ -1748,3 +1748,83 @@ aside.report-crosslink a {
   margin-bottom: 0.75rem;
   line-height: 1.5;
 }
+
+@media (max-width: 900px) {
+  .dropdown-menu {
+    position: static !important;
+    grid-column: 1 / -1 !important;
+    display: none;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 6px 0 8px 0 !important;
+    background: rgba(255, 255, 255, 0.05);
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    pointer-events: auto;
+    border-left: 2px solid rgba(255, 255, 255, 0.14);
+    margin-left: 8px !important;
+    width: calc(100% - 8px) !important;
+  }
+
+  .has-dropdown.is-submenu-open > .dropdown-menu {
+    display: block !important;
+  }
+
+  .dropdown-menu li {
+    display: block;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  .dropdown-menu a {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 11px 18px 11px 24px !important;
+    color: #f4f4f4 !important;
+    background: transparent;
+    font-size: 14.5px;
+    line-height: 1.4;
+    font-weight: 500;
+    text-align: left !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-indent: 0 !important;
+    transform: none !important;
+    padding-left: 18px !important;
+  }
+
+  .dropdown-menu a:hover,
+  .dropdown-menu a:focus-visible {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .dropdown-menu,
+  .dropdown-menu * {
+    box-sizing: border-box;
+  }
+
+  .nav .dropdown-menu {
+    text-align: left !important;
+  }
+
+  .nav .dropdown-menu a {
+    position: relative;
+    left: auto !important;
+  }
+}
